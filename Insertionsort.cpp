@@ -8,28 +8,21 @@ int main()
 {
     int n;
     cin >> n;
-    int a[n];
-    for(int i=0;i<n;i++)
+    int arr[n];
+    for (int i = 0;i < n;i++)
     {
-        cin >> a[i];
+        cin >> arr[i];
     }
-    for(int i=1;i<n;i++)
-    {
-        int temp=a[i];
-        if(a[i]<a[i-1])
-        {
-            int j=i;
-            while(a[j]<a[j-1])
-            {
-                a[j]=a[j-1];
-                a[j-1]=temp;
-                j--;
-            }
+    for (int i = 0;i < n;i++) {
+        int j = i;
+        while (j > 0 && arr[j] < arr[j - 1]) {
+            swap(arr[j], arr[j - 1]);
+            j--;
         }
-
     }
-    for(int i=0;i<n;i++)
+
+    for (int i = 0;i < n;i++)
     {
-        cout << a[i];
+        cout << arr[i];
     }
 }
