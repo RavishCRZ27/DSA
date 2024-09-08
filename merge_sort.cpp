@@ -18,30 +18,27 @@ void merge(vector<int>& vec, int low, int mid, int high) {
         }
     }
 
-    // Copy remaining elements from the left half, if any
     while (left <= mid) {
         temp.emplace_back(vec[left]);
         left++;
     }
 
-    // Copy remaining elements from the right half, if any
     while (right <= high) {
         temp.emplace_back(vec[right]);
         right++;
     }
 
-    // Copy sorted elements back into the original vector
     for (int i = low; i <= high; i++) {
         vec[i] = temp[i - low];
     }
 }
 
 void merge_sort(vector<int>& vec, int low, int high) {
-    if (low < high) {  // Continue recursion only if there are more than one element
+    if (low < high) { 
         int mid = (low + high) / 2;
-        merge_sort(vec, low, mid);      // Sort the left half
-        merge_sort(vec, mid + 1, high); // Sort the right half
-        merge(vec, low, mid, high);     // Merge the sorted halves
+        merge_sort(vec, low, mid);      
+        merge_sort(vec, mid + 1, high); 
+        merge(vec, low, mid, high); 
     }
 }
 
