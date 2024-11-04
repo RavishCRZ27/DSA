@@ -7,7 +7,6 @@ void merge(vector<int>& vec, int low, int mid, int high) {
     int right = mid + 1;
     vector<int> temp;
 
-    // Merging the two halves
     while (left <= mid && right <= high) {
         if (vec[left] <= vec[right]) {
             temp.emplace_back(vec[left]);
