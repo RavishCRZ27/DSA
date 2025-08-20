@@ -2,9 +2,10 @@
 using namespace std;
 
 void reverse(int arr[], int s, int e) {
-    if (s < e) {
+    while (s < e) {
         swap(arr[s], arr[e]);
-        reverse(arr, s + 1, e - 1);
+        s++;
+        e--;
     }
 }
 

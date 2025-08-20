@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include<bits/stdc++.h>
 using namespace std;
 int Binarysearch(int n,int arr[],int k)
 {
